@@ -22,6 +22,8 @@ README.md            → Este archivo
 - 📄 [Criterios de Evaluación](./Documentación/Rúbrica_trabajo_integrador-Programación_I.pdf)
 - 📄 [Material de apoyo presentación](./Documentación/Arboles_en_programacion.pptx)  
 - 📄 [Guía de Análisis de Enunciados](./Documentación/Trabajo_Integrador-Programación_I.pdf)
+- 📄 [Guía de la materia](./Documentación/Implementacion-de-Arboles-en-Python-Utilizando-Listas.pdf)
+
 
 ---
 
