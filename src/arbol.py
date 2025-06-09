@@ -94,6 +94,68 @@ def buscar_por_recorrido(arbol, valor, tipo):
     else:
         print(f"❌ Valor {valor} NO encontrado con búsqueda en {tipo}.")
 
+# --- Visualización ---
+
+def convertir_a_anytree(arbol, padre=None):
+    """Convierte el árbol en listas a formato anytree para impresión en consola"""
+    nodo = Node(arbol[0], parent=padre)
+    for hijo in arbol[1]:
+        convertir_a_anytree(hijo, nodo)
+    return nodo
+
+def imprimir_ascii(arbol):
+    """Imprime el árbol usando caracteres ASCII con anytree"""
+    print("Representación visual del árbol (ASCII):")
+    anytree_raiz = convertir_a_anytree(arbol)
+    for pre, _, node in RenderTree(anytree_raiz):
+        print(f"{pre}{node.name}")
+
+def convertir_a_dot(arbol, parent_name=None, graph=None):
+    """Convierte el árbol a formato pydot para exportar a PNG o SVG"""
+    if graph is None:
+        graph = pydot.Dot(graph_type='graph')
+
+    node_name = arbol[0]
+    graph.add_node(pydot.Node(node_name))
+
+    if parent_name:
+        graph.add_edge(pydot.Edge(parent_name, node_name))
+
+    for hijo in arbol[1]:
+        convertir_a_dot(hijo, node_name, graph)
+
+    return graph
+
+def guardar_grafico(arbol, filename="arbol.png"):
+    """Guarda el árbol como imagen (formato depende del filename)"""
+    graph = convertir_a_dot(arbol)
+    if filename.endswith(".svg"):
+        graph.write_svg(filename)
+    else:
+        graph.write_png(filename)
+
+# Algunos tests para ejecutar de forma aislada el codigo y validar su funcionmiento
+if __name__ == "__main__":
+    raiz = crear_nodo("A")
+    insertar_hijo(raiz, "A", "B")
+    insertar_hijo(raiz, "A", "C")
+    insertar_hijo(raiz, "B", "D")
+    insertar_hijo(raiz, "B", "E")
+    insertar_hijo(raiz, "C", "F")
+
+    print("Árbol representado:")
+    mostrar_arbol(raiz)
+
+    print("\nRepresentación visual del árbol (ASCII):")
+    imprimir_ascii(raiz)
+
+    print("\nGuardando el árbol como imagen (arbol.png)...")
+    guardar_grafico(raiz, "arbol.png")
+
+    print("\n¿Está 'E' en el árbol?", buscar_profundidad(raiz, "E"))
+    print("¿Está 'Z' en el árbol?", buscar_profundidad(raiz, "Z"))
+
+
 # Programa principal
 if __name__ == "__main__":
     valor_raiz = pedir_numero("Ingresa el valor numérico del nodo raíz: ")
