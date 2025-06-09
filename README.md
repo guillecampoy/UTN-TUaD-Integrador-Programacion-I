@@ -20,7 +20,7 @@ README.md            → Este archivo
 ## 📚 Secciones Importantes
 
 - 📄 [Criterios de Evaluación](./Documentación/Rúbrica_trabajo_integrador-Programación_I.pdf)
-- 📄 [Material de apoyo presentación](./Documentacion/Arboles_en_programacion.pptx.pdf)  
+- 📄 [Material de apoyo presentación](./Documentacion/Arboles_en_programacion.pptx)  
 - 📄 [Guía de Análisis de Enunciados](./Documentacion/Trabajo_Integrador-Programación_I.pdf)
 
 ---
