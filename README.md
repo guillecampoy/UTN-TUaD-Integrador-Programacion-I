@@ -12,7 +12,6 @@ El enfoque principal de este trabajo es representar estructuras de **árboles** 
 ```
 /Documentacion       → Documentos de apoyo y criterios de evaluación  
 /src                 → Código fuente en Python  
-/tests               → Pruebas simples para verificar funcionalidades  
 README.md            → Este archivo
 ```
 
@@ -20,10 +19,9 @@ README.md            → Este archivo
 
 ## 📚 Secciones Importantes (sección en WIP)
 
-- 📄 [Criterios de Evaluación](./Documentacion/criterios_evaluacion.pdf)  
-- 📄 [Investigación Previa sobre Árboles](./Documentacion/investigacion_arboles.pdf)  
-- 📄 [Resumen del Cuadernillo Teórico](./Documentacion/cuadernillo_teoria.pdf)  
-- 📄 [Guía de Análisis de Enunciados](./Documentacion/analisis_enunciados.pdf)  
+- 📄 [Criterios de Evaluación](./Documentación/Rúbrica_trabajo_integrador-Programación_I.pdf)
+- 📄 [Material de apoyo presentación](./Documentacion/Arboles_en_programacion.pptx.pdf)  
+- 📄 [Guía de Análisis de Enunciados](./Documentacion/Trabajo_Integrador-Programación_I.pdf)
 
 ---
 
