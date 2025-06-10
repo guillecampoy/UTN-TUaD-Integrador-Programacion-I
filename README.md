@@ -40,7 +40,61 @@ README.md            → Este archivo
    python src/arbol.py
    ```
 
-> ⚠️ Este proyecto no requiere librerías externas, solo Python 3. (WIP ya que podemos indicar instalar dependencias para el graficado del arbol en consola)
+> ⚠️ Este proyecto no requiere librerías externas para su lógica principal, pero sí se necesitan algunas para las visualizaciones opcionales.
+
+---
+
+## 🖥️ Visualización del Árbol
+
+### Vista en consola (ASCII)
+
+Usamos la librería `anytree` para imprimir el árbol de forma jerárquica con símbolos ASCII:
+
+```bash
+pip install anytree
+```
+
+```python
+A
+├── B
+│   ├── D
+│   └── E
+└── C
+    └── F
+```
+
+### Exportar a PNG o SVG
+
+Para exportar el árbol como imagen, usamos `graphviz` y `pydot`.
+
+```bash
+pip install graphviz pydot
+sudo apt install graphviz  # en Linux
+```
+#### Además, instalá Graphviz según tu sistema:
+
+- **Windows**:
+  1. Descargá el instalador desde [https://graphviz.org/download](https://graphviz.org/download)
+  2. Instalá y agregá la ruta de `dot.exe` al PATH (usualmente `C:\Program Files\Graphviz\bin`)
+
+- **macOS**:
+  ```bash
+  brew install graphviz
+  ```
+
+- **Linux (Debian/Ubuntu)**:
+  ```bash
+  sudo apt install graphviz
+  ```
+
+> Verificá que el comando `dot` esté disponible con:
+> ```bash
+> dot -V
+> ```
+
+El gráfico se guarda en ./graficos:
+- 📄 `arbol.png`
+- 📄 `arbol.svg`
 
 ---
 

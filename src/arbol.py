@@ -1,3 +1,6 @@
+from anytree import Node, RenderTree
+import pydot
+
 def crear_nodo(valor):
     """
     Crea un nodo de árbol binario con valor y sin hijos.
@@ -94,6 +97,55 @@ def buscar_por_recorrido(arbol, valor, tipo):
     else:
         print(f"❌ Valor {valor} NO encontrado con búsqueda en {tipo}.")
 
+# --- Visualización ---
+
+def convertir_a_anytree(arbol, padre=None):
+    """Convierte el árbol binario en listas a formato anytree para impresión en consola"""
+    if arbol is None:
+        return None
+    nodo = Node(arbol[0], parent=padre)
+    if arbol[1] is not None:
+        convertir_a_anytree(arbol[1], nodo)
+    if arbol[2] is not None:
+        convertir_a_anytree(arbol[2], nodo)
+    return nodo
+
+def imprimir_ascii(arbol):
+    """Imprime el árbol usando caracteres ASCII con anytree"""
+    print("Representación visual del árbol (ASCII):")
+    anytree_raiz = convertir_a_anytree(arbol)
+    for pre, _, node in RenderTree(anytree_raiz):
+        print(f"{pre}{node.name}")
+
+def convertir_a_dot(arbol, parent_name=None, graph=None):
+    """Convierte el árbol binario a formato pydot para exportar a PNG o SVG"""
+    if arbol is None:
+        return graph
+    if graph is None:
+        graph = pydot.Dot(graph_type='graph')
+
+    node_name = str(arbol[0])
+    graph.add_node(pydot.Node(node_name))
+
+    if parent_name:
+        graph.add_edge(pydot.Edge(parent_name, node_name))
+
+    # Recorrer hijos izquierdo y derecho
+    if arbol[1] is not None:
+        convertir_a_dot(arbol[1], node_name, graph)
+    if arbol[2] is not None:
+        convertir_a_dot(arbol[2], node_name, graph)
+
+    return graph
+
+def guardar_grafico(arbol, filename="arbol.png"):
+    """Guarda el árbol como imagen (formato depende del filename)"""
+    graph = convertir_a_dot(arbol)
+    if filename.endswith(".svg"):
+        graph.write_svg(filename)
+    else:
+        graph.write_png(filename)
+
 # Programa principal
 if __name__ == "__main__":
     valor_raiz = pedir_numero("Ingresa el valor numérico del nodo raíz: ")
@@ -109,11 +161,13 @@ if __name__ == "__main__":
         elif respuesta == 'n':
             print("\nÁrbol binario final:")
             mostrar_arbol(arbol)
-
+            print("\nRepresentación visual del árbol:")
+            imprimir_ascii(arbol)
+            guardar_grafico(arbol, "arbol.png")
+            print("✅ Árbol guardado como 'arbol.png'.")
             tipo = pedir_tipo_recorrido()
             valor_buscar = pedir_numero("Ingresa el valor numérico a buscar: ")
             buscar_por_recorrido(arbol, valor_buscar, tipo)
             detener_ciclo = True
-    
         else:
             print("Opción inválida.")
