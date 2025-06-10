@@ -113,6 +113,8 @@ El gráfico se guarda en ./graficos:
 - [Guillermo Campoy](https://github.com/guillecampoy)
 
 ---
+Video yotube con muestra del trabajo realizado
+https://youtu.be/XH0ylZCb_Rw
 
 ## 🏫 Universidad Tecnológica Nacional  
 Programación I - Tecnicatura Universitaria en Programación a Distancia  
