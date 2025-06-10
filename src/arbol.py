@@ -100,10 +100,14 @@ def buscar_por_recorrido(arbol, valor, tipo):
 # --- Visualización ---
 
 def convertir_a_anytree(arbol, padre=None):
-    """Convierte el árbol en listas a formato anytree para impresión en consola"""
+    """Convierte el árbol binario en listas a formato anytree para impresión en consola"""
+    if arbol is None:
+        return None
     nodo = Node(arbol[0], parent=padre)
-    for hijo in arbol[1]:
-        convertir_a_anytree(hijo, nodo)
+    if arbol[1] is not None:
+        convertir_a_anytree(arbol[1], nodo)
+    if arbol[2] is not None:
+        convertir_a_anytree(arbol[2], nodo)
     return nodo
 
 def imprimir_ascii(arbol):
@@ -114,18 +118,23 @@ def imprimir_ascii(arbol):
         print(f"{pre}{node.name}")
 
 def convertir_a_dot(arbol, parent_name=None, graph=None):
-    """Convierte el árbol a formato pydot para exportar a PNG o SVG"""
+    """Convierte el árbol binario a formato pydot para exportar a PNG o SVG"""
+    if arbol is None:
+        return graph
     if graph is None:
         graph = pydot.Dot(graph_type='graph')
 
-    node_name = arbol[0]
+    node_name = str(arbol[0])
     graph.add_node(pydot.Node(node_name))
 
     if parent_name:
         graph.add_edge(pydot.Edge(parent_name, node_name))
 
-    for hijo in arbol[1]:
-        convertir_a_dot(hijo, node_name, graph)
+    # Recorrer hijos izquierdo y derecho
+    if arbol[1] is not None:
+        convertir_a_dot(arbol[1], node_name, graph)
+    if arbol[2] is not None:
+        convertir_a_dot(arbol[2], node_name, graph)
 
     return graph
 
