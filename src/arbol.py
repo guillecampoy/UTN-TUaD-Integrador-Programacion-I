@@ -1,3 +1,6 @@
+from anytree import Node, RenderTree
+import pydot
+
 def crear_nodo(valor):
     """
     Crea un nodo de árbol binario con valor y sin hijos.
@@ -152,10 +155,7 @@ if __name__ == "__main__":
     print("\nGuardando el árbol como imagen (arbol.png)...")
     guardar_grafico(raiz, "arbol.png")
 
-    print("\n¿Está 'E' en el árbol?", buscar_profundidad(raiz, "E"))
-    print("¿Está 'Z' en el árbol?", buscar_profundidad(raiz, "Z"))
-
-
+'''
 # Programa principal
 if __name__ == "__main__":
     valor_raiz = pedir_numero("Ingresa el valor numérico del nodo raíz: ")
@@ -179,3 +179,4 @@ if __name__ == "__main__":
     
         else:
             print("Opción inválida.")
+'''
