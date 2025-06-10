@@ -137,25 +137,6 @@ def guardar_grafico(arbol, filename="arbol.png"):
     else:
         graph.write_png(filename)
 
-# Algunos tests para ejecutar de forma aislada el codigo y validar su funcionmiento
-if __name__ == "__main__":
-    raiz = crear_nodo("A")
-    insertar_hijo(raiz, "A", "B")
-    insertar_hijo(raiz, "A", "C")
-    insertar_hijo(raiz, "B", "D")
-    insertar_hijo(raiz, "B", "E")
-    insertar_hijo(raiz, "C", "F")
-
-    print("Árbol representado:")
-    mostrar_arbol(raiz)
-
-    print("\nRepresentación visual del árbol (ASCII):")
-    imprimir_ascii(raiz)
-
-    print("\nGuardando el árbol como imagen (arbol.png)...")
-    guardar_grafico(raiz, "arbol.png")
-
-'''
 # Programa principal
 if __name__ == "__main__":
     valor_raiz = pedir_numero("Ingresa el valor numérico del nodo raíz: ")
@@ -171,12 +152,13 @@ if __name__ == "__main__":
         elif respuesta == 'n':
             print("\nÁrbol binario final:")
             mostrar_arbol(arbol)
-
+            print("\nRepresentación visual del árbol:")
+            imprimir_ascii(arbol)
+            guardar_grafico(arbol, "arbol.png")
+            print("✅ Árbol guardado como 'arbol.png'.")
             tipo = pedir_tipo_recorrido()
             valor_buscar = pedir_numero("Ingresa el valor numérico a buscar: ")
             buscar_por_recorrido(arbol, valor_buscar, tipo)
             detener_ciclo = True
-    
         else:
             print("Opción inválida.")
-'''
