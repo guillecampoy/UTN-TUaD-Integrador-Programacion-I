@@ -10,29 +10,29 @@ El enfoque principal de este trabajo es representar estructuras de **árboles** 
 ## 📁 Estructura del Repositorio
 
 ```
-/Documentacion       → Documentos de apoyo y criterios de evaluación  
+/Documentacion       → Documentos de apoyo, criterios de evaluación y entrega 
 /src                 → Código fuente en Python  
 README.md            → Este archivo
 ```
 
 ---
 
-## 📚 Secciones Importantes
+## 📚 Documentos y Entregables 
 
 - 📄 [Criterios de Evaluación](./Documentación/Rúbrica_trabajo_integrador-Programación_I.pdf)
-- 📄 [Material de apoyo presentación](./Documentación/Arboles_en_programacion.pptx)  
-- 📄 [Guía de Análisis de Enunciados](./Documentación/Trabajo_Integrador-Programación_I.pdf)
-- 📄 [Guía de la materia](./Documentación/Implementacion-de-Arboles-en-Python-Utilizando-Listas.pdf)
+- 📄 [Material de apoyo presentación](./Documentación/Arboles_implementados_con_listas_soporte_introducción.pdf)  
+- 📄 [Guía Enunciado](./Documentación/Consigna-Trabajo_Integrador-Programación_I.pdf)
+- 📄 [Material docente](./Documentación/Material_docente-Implementacion-de-Arboles-en-Python-Utilizando-Listas.pdf)
+- 📄 [Entregable de del trabajo](./Documentación/Programación-I_Trabajo-Integrador_Luis-Cisneros_Guillermo-Campoy.pdf)
 
 
 ---
 
-## 🔧 Cómo Ejecutar (WIP)
+## 🔧 Cómo Ejecutar
 
 1. Cloná el repositorio:  
    ```bash
-   git clone https://github.com/usuario/proyecto-arboles.git
-   cd proyecto-arboles
+   git clone https://github.com/guillecampoy/UTN-TUaD-Integrador-Programacion-I
    ```
 
 2. Ejecutá el archivo principal:  
@@ -101,7 +101,7 @@ El gráfico se guarda en ./graficos:
 ## 🧠 ¿Qué Aprendimos?
 
 - Representar estructuras no lineales sin objetos
-- Navegar, insertar y eliminar nodos en árboles simulados con listas
+- Realizar operaciones de construcción y búsqueda en árboles implementados con listas anidadas
 - Dividir el problema en funciones pequeñas y reutilizables
 - Trabajar colaborativamente con control de versiones
 
