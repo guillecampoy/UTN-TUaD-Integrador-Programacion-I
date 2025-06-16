@@ -23,7 +23,7 @@ README.md            → Este archivo
 - 📄 [Material de apoyo presentación](./Documentación/Arboles_implementados_con_listas_soporte_introducción.pdf)  
 - 📄 [Guía Enunciado](./Documentación/Consigna-Trabajo_Integrador-Programación_I.pdf)
 - 📄 [Material docente](./Documentación/Material_docente-Implementacion-de-Arboles-en-Python-Utilizando-Listas.pdf)
-- 📄 [Entregable de del trabajo](./Documentación/Programación-I_Trabajo-Integrador_Luis-Cisneros_Guillermo-Campoy.pdf)
+- 📄 [Entregable final](./Documentación/Programación-I_Trabajo-Integrador_Luis-Cisneros_Guillermo-Campoy.pdf)
 
 
 ---
